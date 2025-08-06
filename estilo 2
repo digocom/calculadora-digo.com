@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Taxas</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #c89efc, #e0b4fc);
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      background-color: #fff;
+      border-radius: 12px;
+      margin: 40px auto;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #6c28d9;
+      margin-bottom: 25px;
+    }
+
+    .inputs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 8px;
+      background-color: #f9f9f9;
+      font-weight: bold;
+      color: #555;
+    }
+
+    td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td:last-child {
+      font-weight: bold;
+      color: #0b8e31;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de taxas</h1>
+    <div class="inputs">
+      <input type="number" id="valor" placeholder="Valor para receber" />
+      <button onclick="calcularParcelas()">Calcular</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Parcelas</th>
+          <th>Parcelado</th>
+          <th>Valor cobrado</th>
+        </tr>
+      </thead>
+      <tbody id="resultado"></tbody>
+    </table>
+    <div class="footer">
+      © 2025 Digo.com - Todos os direitos reservados.
+    </div>
+  </div>
+
+  <script>
+    function calcularParcelas() {
+      const valor = parseFloat(document.getElementById("valor").value);
+      const tbody = document.getElementById("resultado");
+      tbody.innerHTML = "";
+
+      if (!valor || valor <= 0) return;
+
+      for (let i = 1; i <= 12; i++) {
+        const totalComAcrescimo = valor * 1.05 + (i * 5); // Simula acréscimos diferentes
+        const valorParcela = totalComAcrescimo / i;
+
+        const row = `
+          <tr>
+            <td>${i} x</td>
+            <td>${valorParcela.toFixed(2).replace('.', ',')}</td>
+            <td>R$ ${totalComAcrescimo.toFixed(2).replace('.', ',')}</td>
+          </tr>
+        `;
+        tbody.innerHTML += row;
+      }
+    }
+  </script>
+</body>
+</html>
