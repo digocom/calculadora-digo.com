@@ -2,7 +2,7 @@ function calcularParcela() {
   const valor = parseFloat(document.getElementById("valor").value);
   const parcelas = parseInt(document.getElementById("parcelas").value);
 
-  if (isNaN(valor) || valor <= 0 || isNaN(parcelas) || parcelas < 1 || parcelas > 6) {
+  if (isNaN(valor) || valor <= 0 || isNaN(parcelas) || parcelas < 1 || parcelas > 12) {
     document.getElementById("resultado").innerHTML = "<p>Insira um valor e número de parcelas válido (1 a 6).</p>";
     return;
   }
