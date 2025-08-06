@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Digo.com</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Digo.com</title>
+  <link rel="stylesheet" href="estilo.css" />
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo Digo" class="logo" />
-        <h1>Bem-vindo à Digo.com</h1>
-    </header>
-    <main>
-        <section class="calculadora">
-            <h2>Simule suas compras</h2>
-            <input type="number" id="valor" placeholder="Digite o valor" />
-            <button onclick="calcular()">Calcular</button>
-            <p id="resultado"></p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Digo.com - Todos os direitos reservados.</p>
-    </footer>
-    <script src="script.js"></script>
+  <header>
+    <img src="IDV-10.png" alt="Logo Digo" height="40" />
+    <h1>Bem-vindo à Digo.com</h1>
+  </header>
+  <main>
+    <h2>Simule suas compras</h2>
+    <input type="number" id="valor" placeholder="Digite o valor da compra" />
+    <button onclick="calcularParcelas()">Calcular</button>
+    <div id="resultado"></div>
+  </main>
+  <footer>
+    <p>© 2025 Digo.com - Todos os direitos reservados.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
