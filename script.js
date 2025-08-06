@@ -1,26 +1,34 @@
-function calcularParcela() {
+function calcularParcelas() {
   const valor = parseFloat(document.getElementById("valor").value);
-  const parcelas = parseInt(document.getElementById("parcelas").value);
-
-  if (isNaN(valor) || valor <= 0 || isNaN(parcelas) || parcelas < 1 || parcelas > 12) {
-    document.getElementById("resultado").innerHTML = "<p>Insira um valor e número de parcelas válido (1 a 6).</p>";
+  if (isNaN(valor) || valor <= 0) {
+    document.getElementById("resultado").innerHTML = "<p>Insira um valor válido.</p>";
     return;
   }
 
   const acrescimo = valor * 0.10;
   const totalComAcrescimo = valor + acrescimo;
-  const valorParcela = (totalComAcrescimo / parcelas).toFixed(2);
 
-  const resultadoHTML = `
+  let resultadoHTML = `
     <table>
-      <tr><th>Parcelas</th><th>Valor da Parcela</th><th>Total com Acréscimo</th></tr>
       <tr>
-        <td>${parcelas}x</td>
+        <th>Parcelas</th>
+        <th>Valor da Parcela</th>
+        <th>Total com Acréscimo</th>
+      </tr>
+  `;
+
+  for (let i = 1; i <= 12; i++) {
+    const valorParcela = (totalComAcrescimo / i).toFixed(2);
+    resultadoHTML += `
+      <tr>
+        <td>${i}x</td>
         <td>R$ ${valorParcela}</td>
         <td>R$ ${totalComAcrescimo.toFixed(2)}</td>
       </tr>
-    </table>
-  `;
+    `;
+  }
 
+  resultadoHTML += `</table>`;
   document.getElementById("resultado").innerHTML = resultadoHTML;
 }
+
