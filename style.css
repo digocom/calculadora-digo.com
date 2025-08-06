@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+header {
+    background-color: #44039d;
+    color: white;
+    padding: 20px 0;
+}
+
+.logo {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.calculadora {
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f64e1a;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 20px 0;
+    background-color: #eee;
+}
